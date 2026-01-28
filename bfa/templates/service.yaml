@@ -8,9 +8,9 @@ spec:
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
- #---!!          targetPort: http
-      targetPort: 8000
+      targetPort: http
       protocol: TCP
       name: http
+      nodePort: 30800
   selector:
     {{- include "bfa.selectorLabels" . | nindent 4 }}
